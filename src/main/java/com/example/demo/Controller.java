@@ -19,26 +19,26 @@ public class Controller {
         return "index";
     }
 
-    @GetMapping("/addcompany")
+    @GetMapping("/add-company")
     public String addTeam(Model model) {
         model.addAttribute("company", new Company());
         return "companyform";
     }
 
-    @PostMapping("/processcompany")
+    @PostMapping("/process-company")
     public String processTeam(@ModelAttribute Company company) {
         companyRepository.save(company);
         return "redirect:/";
     }
 
-    @GetMapping("/addemployee")
+    @GetMapping("/add-employee")
     public String addEmployee(Model model) {
         model.addAttribute("companies", companyRepository.findAll());
         model.addAttribute("employee", new Employee());
         return "employeeform";
     }
 
-    @PostMapping("/processemployee")
+    @PostMapping("/process-employee")
     public String processEmployee(@ModelAttribute Employee employee) {
         Set<Employee> employees = new HashSet<>();
         employees.add(employee);

@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form th:action="@{/processemployee}" th:object="${employee}" method="post">
+<form th:action="@{/process-employee}" th:object="${employee}" method="post">
     <input type="hidden" th:field="*{id}">
     Name: <input type="text" placeholder="name" th:field="*{name}">
     <br>

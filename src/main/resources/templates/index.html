@@ -11,8 +11,8 @@
             <input type="submit" value="Enter">
         </form>
     </div>
-    <a href="/addcompany">Add a Company</a> <br />
-    <a href="/addemployee">Add an Employee</a>
+    <a href="/add-company">Add a Company</a> <br />
+    <a href="/add-employee">Add an Employee</a>
     <h1>Company List</h1>
     <div th:each="company : ${companies}">
         <h2 th:text="${company.name}"></h2>
