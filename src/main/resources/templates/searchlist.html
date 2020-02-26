@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <a href="/"><button>Index</button></a>
+    <th:block>
+        <div th:each="company : ${companySearch}">
+            <h1 th:text="${company.name}"></h1>
+            <ul>
+                <th:block th:each="employee : ${company.employees}">
+                    <li th:text="${employee.name}"></li>
+                </th:block>
+            </ul>
+        </div>
+    </th:block>
+
+</div>
+
+</body>
+</html>

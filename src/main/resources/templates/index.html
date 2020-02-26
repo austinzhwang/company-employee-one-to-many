@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <form th:action="@{/search}" method="post">
+            <input type="text" name="search" placeholder="Enter search name" required>
+            <input type="submit" value="Enter">
+        </form>
+    </div>
+    <a href="/addcompany">Add a Company</a> <br />
+    <a href="/addemployee">Add an Employee</a>
+    <h1>Company List</h1>
+    <div th:each="company : ${companies}">
+        <h2 th:text="${company.name}"></h2>
+        <ul>
+            <th:block th:each="employee : ${company.employees}">
+                <li th:text="${employee.name}"></li>
+            </th:block>
+        </ul>
+    </div>
+</body>
+</html>
